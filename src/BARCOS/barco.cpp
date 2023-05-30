@@ -2,9 +2,15 @@
 #include <iostream>
 using namespace std;
 
-Barco::Barco (int _a, int _b){
+Barco::Barco (int _a, int _b, char _tablero[9][9]){
   a =_a;
   b = _b;
+  for (int i=0; i<9; i++){
+    for (int j=0; j<9; j++){
+      _tablero [i][j]= ' ';
+      tablero [i][j]= _tablero[i][j];
+    }
+  }
 }
 
 void Barco::setA(int _a){
@@ -13,24 +19,26 @@ void Barco::setA(int _a){
 void Barco::setB(int _b){
   b = _b;
 }
+void Barco::setTablero(char _tablero[9][9]){
+ for (int i=0; i<9; i++){
+    for (int j=0; j<9; j++){
+      tablero [i][j]= _tablero [i][j];
+}
+ }
+}
 
 int Barco::getA(){return a;}
 int Barco::getB(){return b;}
+char Barco::getTablero(){return tablero [9][9];}
 
 
 
 
 void Barco::ingresarPosicion (){  
     
-  char tablero [a][b];
 
     int f = 0, c = 0;
 
-    for (int i=0; i<a; i++){
-      for (int j=0; j<b; j++){
-        tablero[a][b]= ' ';
-      }
-    }
     
     for (int i=1; i<=4; i++){
       cout << " El barco " << i << " ocupa " << " " << i << "casillas" << endl;
@@ -93,5 +101,5 @@ void Barco::mostrar(){
       cout << tablero [a][b];  
     }
   }
-}
+}             
 
