@@ -28,27 +28,27 @@ void Maquina::ingresarPosicionM (){
         tableroM [f][c] = 'x';
       }
       
-    int d=0;
+     int d=0;
 
       if(i==2){ // dos barcos
        while (d<2){
-        while(tableroM[f][c] == 'x'){
           f= rand()% 9;
           c= rand()% 9;
-        }
-        tableroM [f][c] = 'x';
+          while (tableroM[f][c]=='x'){
+             f= rand()% 9;
+             c= rand()% 9;
+          }
+         tableroM [f][c] = 'x';
 
        verticalhorizontal = rand()% 2;
        // 1= horizontal 0= vertical
        if (verticalhorizontal == 1){
         c2= c+1;
+      
         if (c2>8){
           c2= c-1;
         }
-        if(tableroM[f][c2]=='x'){
-          
-        }
-
+      
         if (tableroM[f][c2] == '.'){
           tableroM[f][c2] = 'x';
           }
@@ -65,7 +65,7 @@ void Maquina::ingresarPosicionM (){
           }
         }
           d++;
-       }
+        }
        }
 
 
@@ -117,7 +117,9 @@ void Maquina::ingresarPosicionM (){
        }
     }
 
-    if (i=4){
+
+
+    if (i==4){
         while(tableroM[f][c] == 'x'){
           f= rand()% 9;
           c= rand()% 9;
@@ -128,7 +130,7 @@ void Maquina::ingresarPosicionM (){
        // 1= horizontal 0= vertical
        if (verticalhorizontal == 1){
 
-        c2= c+1;
+        c2= c+3;
         if (c2>8){
           c2= c-1;
         }
@@ -138,12 +140,12 @@ void Maquina::ingresarPosicionM (){
 
         c2= c+2;
         if(c2>8){
-            c2= c-3;
+            c2= c-2;
           }
         if(tableroM[f][c2] == '.'){
           tableroM[f][c2] = 'x';
         }
-         c2= c+3;
+         c2= c+1;
         if(c2>8){
             c2= c-3;
           }
@@ -155,7 +157,7 @@ void Maquina::ingresarPosicionM (){
 
     if (verticalhorizontal == 0){
 
-        f2= f+1;
+        f2= f+3;
         if (f2>8){
           f2= f-1;
         }
@@ -164,12 +166,12 @@ void Maquina::ingresarPosicionM (){
           }
         f2= f+2;
         if(f2>8){
-            f2= f-3;
+            f2= f-2;
           }
         if(tableroM[f2][c] == '.'){
           tableroM[f2][c] = 'x';
         }
-        f2= f+2;
+        f2= f+1;
         if(f2>8){
             f2= f-3;
           }
@@ -177,12 +179,11 @@ void Maquina::ingresarPosicionM (){
           tableroM[f2][c] = 'x';
         }
        }
-        d++;
+        
        }
     }
+    
     }
-
-
 
 
 void Maquina::mostrarM(){
@@ -191,6 +192,7 @@ void Maquina::mostrarM(){
       cout << tableroM [i][j] << " ";  
     }
     cout << "\n";
+   
   }
 }
       
