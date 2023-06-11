@@ -1,40 +1,23 @@
-#include "./barco.h"
+#include "./barcoJ2.h"
 #include <iostream>
 using namespace std;
 
-Barco::Barco (int _a, int _b, char _tablero[9][9]){
-  a =_a;
-  b = _b;
+Barco2::Barco2 ():Barco() {
+
+   tableroJ2 = new char[9][9];
   for (int i=0; i<9; i++){
     for (int j=0; j<9; j++){
-      _tablero [i][j]= ' ';
-      tablero [i][j]= _tablero[i][j];
+      tableroJ2 [i][j]= ' ';
     }
   }
 }
-
-void Barco::setA(int _a){
-  a = _a;
-}
-void Barco::setB(int _b){
-  b = _b;
-}
-void Barco::setTablero(char _tablero[9][9]){
- for (int i=0; i<9; i++){
-    for (int j=0; j<9; j++){
-      tablero [i][j]= _tablero [i][j];
-}
- }
+Barco2::~Barco2(){
+  delete [] tableroJ2;
 }
 
-int Barco::getA(){return a;}
-int Barco::getB(){return b;}
-char Barco::getTablero(){return tablero [9][9];}
 
 
-
-
-void Barco::ingresarPosicion (){  
+void Barco2::ingresarPosicion2 (){  
     
 
     int f = 0, c = 0;
@@ -50,7 +33,7 @@ void Barco::ingresarPosicion (){
       if(i==1){
         cout << "ingrese coordenadas del barco 1:" << endl;
         cin >> f >> c;
-        tablero [f][c] = 'x';
+        tableroJ2 [f][c] = 'x';
       }
       
       int d=0;
@@ -62,8 +45,8 @@ void Barco::ingresarPosicion (){
 
         for(int j=0; j<2; j++){
             cout << "ingrese coordenadas del barco 2:" << endl;
-            cin >> a >> b;
-            tablero [f][c] = 'o';
+            cin >> f >> c;
+            tableroJ2 [f][c] = 'x';
         }
         d++;
         }
@@ -77,7 +60,7 @@ void Barco::ingresarPosicion (){
 
             cout << "ingrese coordenadas del barco 3:" << endl;
             cin >> f>> c;
-            tablero [f][c] = '#';
+            tableroJ2 [f][c] = 'x';
           }
           d++;
         }
@@ -86,7 +69,7 @@ void Barco::ingresarPosicion (){
         for(int j=0; j<4; j++){
             cout << "ingrese coordenadas del barco 4:" << endl;
             cin >> f >> c;
-            tablero [f][c] = '&';
+            tableroJ2 [f][c] = 'x';
           }
 
     
@@ -94,12 +77,12 @@ void Barco::ingresarPosicion (){
     }
 }
 
-void Barco::mostrar(){
+void Barco2::mostrar2(){
 
-  for (int i=0; i<=a; i++){
-    for (int j=0; j<=b; j++){
-      cout << tablero [a][b];  
+  for (int i=0; i<9; i++){
+    for (int j=0; j<9; j++){
+      cout << " " << tableroJ2 [i][j] << " ";  
     }
+    cout << "\n";
   }
 }             
-

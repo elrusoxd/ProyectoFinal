@@ -1,18 +1,22 @@
 #include <iostream>
-#include "./src/barco.h"
+using namespace std;
 
-// Hola soy Orne
-// Hola mundo UwU
+#include "src/BARCOJ2/barcoJ2.h"
+#include "src/MAQUINA/maquina.h"
+
 
 int main(){
 
-    Barco c;
+    Maquina B2;
+   
+   // Maquina M;
 
-    cout << " Ingrese el tamano de su tablero : " << endl;
-    cin >> c.setA >> c.setB;
+   //B1.ingresarPosicion();
 
+    B2.ingresarPosicionM();
+    B2.mostrarM();
 
-
+   // B2.mostrar2();
 
 
 
