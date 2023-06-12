@@ -7,7 +7,7 @@ Barco2::Barco2 ():Barco() {
    tableroJ2 = new char[9][9];
   for (int i=0; i<9; i++){
     for (int j=0; j<9; j++){
-      tableroJ2 [i][j]= ' ';
+      tableroJ2 [i][j]= '.';
     }
   }
 }
