@@ -37,11 +37,21 @@ int main(){
 
    // B2.mostrar2();
 
+    cout << "\n";
+   cout 
+   << "                       ########     ###    ########    ###    ##       ##          ###       ##    ##    ###    ##     ##    ###    ## \n"      
+      "                       ##     ##   ## ##      ##      ## ##   ##       ##         ## ##      ###   ##   ## ##   ##     ##   ## ##   ## \n"     
+      "                       ##     ##  ##   ##     ##     ##   ##  ##       ##        ##   ##     ####  ##  ##   ##  ##     ##  ##   ##  ## \n"    
+      "                       ########  ##     ##    ##    ##     ## ##       ##       ##     ##    ## ## ## ##     ## ##     ## ##     ## ## \n"
+      "                       ##     ## #########    ##    ######### ##       ##       #########    ##  #### #########  ##   ##  ######### ## \n"
+      "                       ##     ## ##     ##    ##    ##     ## ##       ##       ##     ##    ##   ### ##     ##   ## ##   ##     ## ## \n"
+      "                       ########  ##     ##    ##    ##     ## ######## ######## ##     ##    ##    ## ##     ##    ###    ##     ## ######## \n";
 
-   cout << "BATALLA NAVAL " << endl;
-   cout << " Seleccione una opcion de juego : " << endl;
-   cout << " 1.  Jugador 1 vs Jugador 2" << endl;
-   cout << " 2. Jugador vs Maquina " << endl; 
+   cout << "\n";
+   cout << "                                            Seleccione una opcion de juego : ";
+   cout << "\n";
+   cout << "                                            1.  Jugador 1 vs Jugador 2" << endl;
+   cout << "                                            2.  Jugador vs Maquina " << endl; 
    cin >> opcion;
 
    if (opcion == 1){
