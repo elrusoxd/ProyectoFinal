@@ -12,7 +12,10 @@ class Barco{
 
   Barco ();
   ~Barco();
-
+  
+  char gettableroJ1();
+  void settableroJ1(char (*_tableroJ1)[9]);
+  
   void ingresarPosicion();
   void mostrar ();
   

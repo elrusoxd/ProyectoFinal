@@ -7,14 +7,19 @@ using namespace std;
 
 int main(){
 
-    Maquina B2;
+    Barco2 B2;
    
    // Maquina M;
 
    //B1.ingresarPosicion();
 
-    B2.ingresarPosicionM();
-    B2.mostrarM();
+    B2.ingresarPosicion2();
+    B2.mostrar2();
+    for (int i=0; i<9; i++){
+    for (int j=0; j<9; j++){
+      cout << B2.gettableroJ1();
+    }
+  }
 
    // B2.mostrar2();
 

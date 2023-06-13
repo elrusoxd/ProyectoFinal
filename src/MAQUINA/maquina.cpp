@@ -4,7 +4,7 @@
 #include <iostream>
 using namespace std;
 
-Maquina::Maquina ():Barco() {
+Maquina::Maquina():Barco() {
   tableroM = new char[9][9];
    for (int i=0; i<9; i++){
     for (int j=0; j<9; j++){
@@ -15,6 +15,18 @@ Maquina::Maquina ():Barco() {
 Maquina::~Maquina(){
   delete [] tableroM;
 }
+
+void Maquina::settableroM(char (*_tableroM)[9]){
+  for (int i=0; i<9; i++){
+    for (int j=0; j<9; j++){
+      tableroM = _tableroM;
+      tableroM [i][j]= '.'; 
+    }
+  }
+}
+
+char Maquina::gettableroM(){return (*tableroM)[9];}
+
 
 void Maquina::ingresarPosicionM (){  
   int f, c, c2,f2,verticalhorizontal;

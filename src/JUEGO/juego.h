@@ -3,10 +3,9 @@
 
 class Juego : public Barco2, public Maquina{
     private:
-        Barco2 barcoJ2;
-        Maquina maquina;
+        int f,c;
     public:
-        Juego();
+        Juego(int f, int c);
         void batallaJ1yJ2();
         void batallaJ1yM();
 

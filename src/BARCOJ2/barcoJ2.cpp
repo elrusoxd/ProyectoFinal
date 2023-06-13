@@ -7,7 +7,7 @@ Barco2::Barco2 ():Barco() {
    tableroJ2 = new char[9][9];
   for (int i=0; i<9; i++){
     for (int j=0; j<9; j++){
-      tableroJ2 [i][j]= ' ';
+      tableroJ2 [i][j]= '.';
     }
   }
 }
@@ -15,6 +15,16 @@ Barco2::~Barco2(){
   delete [] tableroJ2;
 }
 
+void Barco2::settableroJ2(char (*_tableroJ2)[9]){
+  for (int i=0; i<9; i++){
+    for (int j=0; j<9; j++){
+      tableroJ2 = _tableroJ2;
+      tableroJ2 [i][j]= '.'; 
+    }
+  }
+}
+
+char Barco2::gettableroJ2(){return (*tableroJ2)[9];}
 
 
 void Barco2::ingresarPosicion2 (){  
