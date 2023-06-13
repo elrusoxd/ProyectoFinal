@@ -8,22 +8,21 @@ using namespace std;
 
 int main(){
 
-<<<<<<< HEAD
+
     Barco2 B2;
-=======
+
     int opcion;
 
     //objetos 
     Barco B1;
     Barco2 B2;
     Maquina M;
->>>>>>> 54f72aa956e6301031143016a297f362940b536a
+
    
 
 
    //B1.ingresarPosicion();
 
-<<<<<<< HEAD
     B2.ingresarPosicion2();
     B2.mostrar2();
     for (int i=0; i<9; i++){
@@ -31,9 +30,7 @@ int main(){
       cout << B2.gettableroJ1();
     }
   }
-=======
 
->>>>>>> 54f72aa956e6301031143016a297f362940b536a
 
    // B2.mostrar2();
 
