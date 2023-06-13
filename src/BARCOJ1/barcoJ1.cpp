@@ -13,16 +13,6 @@ Barco::Barco (){
 Barco::~Barco (){
   delete[] tableroJ1;
 }
-void Barco::settableroJ1(char (*_tableroJ1)[9]){
-  for (int i=0; i<9; i++){
-    for (int j=0; j<9; j++){
-      tableroJ1 = _tableroJ1;
-      tableroJ1 [i][j]= '.'; 
-    }
-  }
-}
-
-char Barco::gettableroJ1(){return (*tableroJ1)[9];}
 
 
 void Barco::ingresarPosicion (){  
@@ -92,8 +82,8 @@ void Barco::mostrar(){
 
   for (int i=0; i<9; i++){
     for (int j=0; j<9; j++){
-      cout << tableroJ1 [i][j] << "  ";  
+      cout << tableroJ1 [i][j] << " ";  
     }
-    cout <<" \n";
+    cout <<"\n";
   }
 }             

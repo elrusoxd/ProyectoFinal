@@ -2,35 +2,22 @@
 
 using namespace std;
 
-#include "src/BARCOJ2/barcoJ2.h"
-#include "src/MAQUINA/maquina.h"
+#include "src/JUEGO/juego.h"
 
 
 int main(){
-
-
-    
-
-    int opcion;
+    int opcion, contador1, contador2;
 
     //objetos 
     Barco B1;
     Barco2 B2;
     Maquina M;
-
-   
-
-
-   //B1.ingresarPosicion();
-
-  
-
-
-   // B2.mostrar2();
+    Juego J;
+ 
 
     cout << "\n";
-   cout 
-   << "                       ########     ###    ########    ###    ##       ##          ###       ##    ##    ###    ##     ##    ###    ## \n"      
+   cout <<
+      "                       ########     ###    ########    ###    ##       ##          ###       ##    ##    ###    ##     ##    ###    ## \n"      
       "                       ##     ##   ## ##      ##      ## ##   ##       ##         ## ##      ###   ##   ## ##   ##     ##   ## ##   ## \n"     
       "                       ##     ##  ##   ##     ##     ##   ##  ##       ##        ##   ##     ####  ##  ##   ##  ##     ##  ##   ##  ## \n"    
       "                       ########  ##     ##    ##    ##     ## ##       ##       ##     ##    ## ## ## ##     ## ##     ## ##     ## ## \n"
@@ -60,7 +47,8 @@ int main(){
 
      cout << " Momento del ataque : Jugador 1  " << endl;
      cout << " Ingrese las posiciones a atacar : " << endl;
-     //llamar a la funcion 
+     
+     while(contador1<=)
 
      
      cout << " Momento del ataque : Jugador 2  " << endl;

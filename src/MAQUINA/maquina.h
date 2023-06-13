@@ -10,9 +10,6 @@ class Maquina:public Barco{
   Maquina ();
   ~Maquina();
 
-  char gettableroM();
-  void settableroM(char (*_tableroM)[9]);
-
   void ingresarPosicionM();
   void mostrarM ();
   

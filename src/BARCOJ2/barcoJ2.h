@@ -13,9 +13,6 @@ class Barco2:public Barco{
     Barco2 ();
     ~Barco2();
 
-    char gettableroJ2();
-    void settableroJ2(char (*_tableroJ2)[9]);
-
     void ingresarPosicion2();
     void mostrar2 ();
   
