@@ -6,7 +6,16 @@ using namespace std;
 
 
 int main(){
-    int opcion, contador1, contador2;
+    int opcion, contador1, contador2,f,c, contador3;
+    char tableroJ2 [9][9];
+    char tableroM [9][9];
+     for (int i = 0; i < 9; i++) {
+        for (int j = 0; j < 9; j++) {
+            tableroJ2[i][j] = '.';
+            tableroM[i][j] = '.';
+        }
+    }
+     
 
     //objetos 
     Barco B1;
@@ -46,13 +55,19 @@ int main(){
      cout << "\n";
 
      cout << " Momento del ataque : Jugador 1  " << endl;
-     cout << " Ingrese las posiciones a atacar : " << endl;
-     
-     while(contador1<=)
+
 
      
-     cout << " Momento del ataque : Jugador 2  " << endl;
-     cout << " Ingrese las posiciones a atacar : " << endl;
+     while((contador1<18) || (contador3<18)){
+      
+         J.batallaJ1 (tableroJ2, tableroM);
+     }
+
+     cout << "LA BATALLA TERMINO, HAY UN GANADOR : " << endl;
+
+     
+    
+  
      //llamar funcion de ataque 2 ; 
 
    }

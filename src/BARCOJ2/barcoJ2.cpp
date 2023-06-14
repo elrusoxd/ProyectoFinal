@@ -80,7 +80,7 @@ void Barco2::mostrar2(){
 
   for (int i=0; i<9; i++){
     for (int j=0; j<9; j++){
-      cout << " " << tableroJ2 [i][j] << " ";  
+      cout << " " << tableroJ2 [i][j] ;  
     }
     cout << "\n";
   }

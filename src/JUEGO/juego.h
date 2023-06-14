@@ -6,7 +6,7 @@
 
 class Juego : public Barco2, public Maquina{
     private:
-        int f,c;
+        int f,c, opcion;
         char (*DisparosJ1)[9];
         char (*DisparosJ2)[9];
         char (*DisparosM)[9];

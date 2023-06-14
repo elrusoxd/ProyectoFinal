@@ -24,20 +24,21 @@ Juego::~Juego(){
 }
 
 void Juego::batallaJ1(char (*tableroJ2)[9], char (*tableroM)[9]){
-    int contador1=0, contador3=0;
+    int contador1=0, contador3=0, opcion;
 
    //jugador 1
    //contador = 18
    
-   //if(opcion = 1){}
+    if(opcion == 1){
+        cout << " Ingrese las posiciones a atacar : " << endl;
+        cin >> f >> c;
+     
     if(tableroJ2[f][c] == 'x'){
         contador1++;
-        tableroJ2[f][c] = 'o';
+        tableroJ2[f][c] == 'o';
     
-    }else if (tableroJ2[f][c] == '.' || tableroJ2[f][c] == 'o'){
-        void batallaJ2();
     }
-
+    
     DisparosJ1[f][c] = 'o';
     
     cout << "Disparos J1" << endl;
@@ -46,11 +47,16 @@ void Juego::batallaJ1(char (*tableroJ2)[9], char (*tableroM)[9]){
       cout<< DisparosJ1 [i][j] << " ";  
     }
     cout << "\n";
+    }
+    if (tableroJ2[f][c] == '.' || tableroJ2[f][c] == 'o'){
+        void batallaJ2();
+    }
+
   }
+    
 
 
-
-//if (opcion = 2){}
+ if (opcion == 2){
     
     if(tableroM[f][c] == 'x'){
         contador3++;
@@ -68,12 +74,16 @@ void Juego::batallaJ1(char (*tableroJ2)[9], char (*tableroM)[9]){
     }
     cout << "\n";
   }
+ }
 }             
 
 void Juego::batallaJ2(char (*tableroJ1)[9]){
     int contador2=0;
-
+  
     // contador = 18
+    cout << "Turno del jugador 2 : " << endl;
+      cout << " Ingrese las posiciones a atacar : " << endl;
+        cin >> f >> c;
     if(tableroJ1[f][c] == 'x'){
         contador2++;
         tableroJ1[f][c] = 'o';
