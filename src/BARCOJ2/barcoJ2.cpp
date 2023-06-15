@@ -14,11 +14,11 @@ Barco2::Barco2 ():Barco() {
 Barco2::~Barco2(){
   delete [] tableroJ2;
 }
-
+int Barco2::getTableroJ2(){return (*tableroJ2)[9];}
 
 void Barco2::ingresarPosicion2 (){  
-    
-
+  
+  
     int f = 0, c = 0;
 
     

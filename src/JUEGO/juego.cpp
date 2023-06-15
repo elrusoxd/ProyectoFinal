@@ -23,23 +23,44 @@ Juego::~Juego(){
   delete [] DisparosJ2;
 }
 
-void Juego::batallaJ1(char (*tableroJ2)[9], char (*tableroM)[9]){
-    int contador1=0, contador3=0, opcion;
+void Juego::setF(int _f){f=_f;}
+void Juego::setC(int _c){c=_c;}
+void Juego::setO(int _opcion){opcion=_opcion;}
 
+int Juego::getF(){return f;}
+int Juego::getC(){return c;}
+int Juego::getO(){return opcion;}
+
+
+void Juego::batallaJ1(char (*tableroJ2)[9], char (*tableroM)[9], char (*tableroJ1)[9]){
    //jugador 1
    //contador = 18
    
     if(opcion == 1){
+      while(contador1 != 1){
         cout << " Ingrese las posiciones a atacar : " << endl;
-        cin >> f >> c;
-     
+        cin >> f ;
+        cin >> c;
+      DisparosJ1[f][c] = 'o';
+      
+      for (int i=0; i<9; i++){
+    for (int j=0; j<9; j++){
+      cout << tableroJ2 [i][j] << " ";  
+    }
+    cout << "\n";
+   
+  }
+
     if(tableroJ2[f][c] == 'x'){
         contador1++;
+        cout << "contador : " << contador1;
         tableroJ2[f][c] == 'o';
-    
+      
+    }else if (tableroJ2[f][c] == '.' || tableroJ2[f][c] == 'o'){
+      batallaJ2(tableroJ1);
     }
-    
-    DisparosJ1[f][c] = 'o';
+
+   
     
     cout << "Disparos J1" << endl;
     for (int i=0; i<9; i++){
@@ -48,11 +69,13 @@ void Juego::batallaJ1(char (*tableroJ2)[9], char (*tableroM)[9]){
     }
     cout << "\n";
     }
-    if (tableroJ2[f][c] == '.' || tableroJ2[f][c] == 'o'){
-        void batallaJ2();
     }
 
-  }
+    cout << "El jugador 1 gano " << endl;
+
+    }
+
+  
     
 
 
@@ -78,12 +101,16 @@ void Juego::batallaJ1(char (*tableroJ2)[9], char (*tableroM)[9]){
 }             
 
 void Juego::batallaJ2(char (*tableroJ1)[9]){
-    int contador2=0;
-  
+
+    while (contador2<=18){
+
+    
     // contador = 18
     cout << "Turno del jugador 2 : " << endl;
       cout << " Ingrese las posiciones a atacar : " << endl;
         cin >> f >> c;
+      DisparosJ2[f][c] = 'o';
+
     if(tableroJ1[f][c] == 'x'){
         contador2++;
         tableroJ1[f][c] = 'o';
@@ -92,7 +119,7 @@ void Juego::batallaJ2(char (*tableroJ1)[9]){
         void batallaJ1();
     }
 
-    DisparosJ2[f][c] = 'o';
+    
     cout << "Disparos J2" << endl;
     for (int i=0; i<9; i++){
     for (int j=0; j<9; j++){
@@ -100,10 +127,10 @@ void Juego::batallaJ2(char (*tableroJ1)[9]){
     }
     cout << "\n";
   }
+    }
 }
 
 void Juego::batallaM(char (*tableroJ1)[9]){
-    int contador4=0;
 
     // contador = ni idea
     srand(time(NULL));

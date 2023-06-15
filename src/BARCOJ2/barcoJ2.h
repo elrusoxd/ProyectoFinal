@@ -15,6 +15,10 @@ class Barco2:public Barco{
 
     void ingresarPosicion2();
     void mostrar2 ();
+
+    int getTableroJ2();
+
+   
   
 
 
