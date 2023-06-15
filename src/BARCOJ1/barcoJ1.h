@@ -3,13 +3,8 @@
 
 
 class Barco{
-
-  private: 
-  char (*tableroJ1)[9];
-  
-
   public: 
-
+  char** tableroJ1;
   Barco ();
   ~Barco();
   

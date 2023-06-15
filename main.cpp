@@ -7,9 +7,7 @@ using namespace std;
 
 int main(){
     int opcion, contador1=0, contador2=0,f,c, contador3=0;
-    char (*tableroJ2)[9];
-    char (*tableroM)[9];
-    char (*tableroJ1)[9];
+    
 
     //objetos 
     Barco B1;
@@ -40,18 +38,25 @@ int main(){
 
     cout << " Jugador 1 : " << endl;
     cout << " Ingrese las coordenadas de sus barcos : " << endl;
-    B2.ingresarPosicion();
-    B2.mostrar(); 
+    B1.ingresarPosicion();
+    B1.mostrar(); 
     cout << "\n";
     cout << " Jugador 2 :" << endl;
     cout << " Ingrese las coordenadas de sus barcos :  " << endl;
     B2.ingresarPosicion2();
     B2.mostrar2();
      cout << "\n";
+     
 
      cout << " Momento del ataque : Jugador 1  " << endl;
-     J.getTableroJ2();
-     J.batallaJ1(tableroJ2, tableroM, tableroJ1);
+    while ((J.getcontador1()<=1) &&  (J.getcontador2()<=1)){
+      J.batallaJ1();
+      J.batallaJ2();
+    }
+     if (J.getcontador1()>J.getcontador2()){
+      cout << " EL JUGADOR 1 GANO" << endl;
+     }
+     else {cout << "EL JUGADOR 2 GANO" << endl;}
 
 
      
@@ -67,8 +72,8 @@ int main(){
    else if (opcion == 2){
      cout << " Jugador 1 : " << endl;
     cout << " Ingrese las coordenadas de sus barcos : " << endl;
-    M.ingresarPosicion();
-    M.mostrar();
+    B1.ingresarPosicion();
+    B1.mostrar();
 
     M.ingresarPosicionM();
     M.mostrarM();

@@ -5,10 +5,11 @@
 using namespace std;
 
 
-Juego::Juego(){
+Juego::Juego():B1(), B2(),M(){
     DisparosJ1=new char[9][9];
     DisparosJ2=new char[9][9];
-     DisparosM= new char[9][9];
+    DisparosM= new char[9][9];
+
    for (int i=0; i<9; i++){
     for (int j=0; j<9; j++){
       DisparosJ1[i][j]= '.'; 
@@ -21,57 +22,48 @@ Juego::Juego(){
 Juego::~Juego(){
   delete [] DisparosJ1;
   delete [] DisparosJ2;
+  delete [] DisparosM;
 }
 
-void Juego::setF(int _f){f=_f;}
-void Juego::setC(int _c){c=_c;}
+
 void Juego::setO(int _opcion){opcion=_opcion;}
+void Juego::setcontador1(int _contador1){contador1= _contador1;}
+void Juego::setcontador2(int _contador2){contador2= _contador2;}
 
-int Juego::getF(){return f;}
-int Juego::getC(){return c;}
+
 int Juego::getO(){return opcion;}
+int Juego::getcontador1(){return contador1;}
+int Juego::getcontador2(){return contador2;}
 
-
-void Juego::batallaJ1(char (*tableroJ2)[9], char (*tableroM)[9], char (*tableroJ1)[9]){
+void Juego::batallaJ1(){
+  
    //jugador 1
    //contador = 18
-   
-    if(opcion == 1){
-      while(contador1 != 1){
-        cout << " Ingrese las posiciones a atacar : " << endl;
-        cin >> f ;
-        cin >> c;
-      DisparosJ1[f][c] = 'o';
-      
-      for (int i=0; i<9; i++){
-    for (int j=0; j<9; j++){
-      cout << tableroJ2 [i][j] << " ";  
-    }
-    cout << "\n";
-   
-  }
-
-    if(tableroJ2[f][c] == 'x'){
-        contador1++;
-        cout << "contador : " << contador1;
-        tableroJ2[f][c] == 'o';
-      
-    }else if (tableroJ2[f][c] == '.' || tableroJ2[f][c] == 'o'){
-      batallaJ2(tableroJ1);
-    }
-
-   
     
-    cout << "Disparos J1" << endl;
-    for (int i=0; i<9; i++){
-    for (int j=0; j<9; j++){
+    if(opcion == 1){
+      cout << " Ingrese las posiciones a atacar : " << endl;
+      cin >> f >> c;
+      DisparosJ1[f][c] = 'o';
+      /*cout << "Disparos J1" << endl;
+      for (int i=0; i<9; i++){
+      for (int j=0; j<9; j++){
       cout<< DisparosJ1 [i][j] << " ";  
+     }
+    cout << "\n";
+    }*/
+    
+
+    if(B2.tableroJ2[f][c] == 'x'){
+        contador1++;
+        B2.tableroJ2[f][c] = 'o';
     }
+    
+    for (int i=0; i<9; i++){
+      for (int j=0; j<9; j++){
+      cout<< B2.tableroJ2 [i][j] << " ";  
+     }
     cout << "\n";
     }
-    }
-
-    cout << "El jugador 1 gano " << endl;
 
     }
 
@@ -81,11 +73,11 @@ void Juego::batallaJ1(char (*tableroJ2)[9], char (*tableroM)[9], char (*tableroJ
 
  if (opcion == 2){
     
-    if(tableroM[f][c] == 'x'){
+    if(M.tableroM[f][c] == 'x'){
         contador3++;
-        tableroM[f][c] = 'o';
+        M.tableroM[f][c] = 'o';
     
-    }else if (tableroM[f][c] == '.' || tableroM[f][c] == 'o'){
+    }else if (M.tableroM[f][c] == '.' || M.tableroM[f][c] == 'o'){
         void batallaM();
     }
     
@@ -100,48 +92,43 @@ void Juego::batallaJ1(char (*tableroJ2)[9], char (*tableroM)[9], char (*tableroJ
  }
 }             
 
-void Juego::batallaJ2(char (*tableroJ1)[9]){
+void Juego::batallaJ2(){
 
-    while (contador2<=18){
-
-    
     // contador = 18
     cout << "Turno del jugador 2 : " << endl;
       cout << " Ingrese las posiciones a atacar : " << endl;
         cin >> f >> c;
       DisparosJ2[f][c] = 'o';
-
-    if(tableroJ1[f][c] == 'x'){
-        contador2++;
-        tableroJ1[f][c] = 'o';
-    
-    }else if (tableroJ1[f][c] == '.' || tableroJ1[f][c] == 'o'){
-        void batallaJ1();
-    }
-
-    
-    cout << "Disparos J2" << endl;
-    for (int i=0; i<9; i++){
-    for (int j=0; j<9; j++){
+      cout << "Disparos J2" << endl;
+      for (int i=0; i<9; i++){
+      for (int j=0; j<9; j++){
       cout << DisparosJ2 [i][j] << " ";  
+      }
+      cout << "\n";
     }
-    cout << "\n";
-  }
+
+    if(B1.tableroJ1[f][c] == 'x'){
+        contador2++;
+       B1.tableroJ1[f][c] = 'o';
     }
+
+    
+    
+    
 }
 
-void Juego::batallaM(char (*tableroJ1)[9]){
+void Juego::batallaM(){
 
     // contador = ni idea
     srand(time(NULL));
     f= rand()% 9;
     c= rand()% 9;
     
-    if(tableroJ1[f][c] == 'x'){
+    if(B1.tableroJ1[f][c] == 'x'){
         contador4++;
-        tableroJ1[f][c] = 'o';
+        B1.tableroJ1[f][c] = 'o';
     
-    }else if (tableroJ1[f][c] == '.' || tableroJ1[f][c] == 'o'){
+    }else if (B1.tableroJ1[f][c] == '.' || B1.tableroJ1[f][c] == 'o'){
         void batallaJ1();
     }
 

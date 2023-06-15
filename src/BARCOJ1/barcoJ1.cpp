@@ -3,15 +3,22 @@
 using namespace std;
 
 Barco::Barco (){
-  tableroJ1=new char[9][9];
-   for (int i=0; i<9; i++){
-    for (int j=0; j<9; j++){
-      tableroJ1 [i][j]= '.'; 
+    tableroJ1 = new char*[9]; // Crea un arreglo de punteros
+
+  for (int i = 0; i < 9; i++) {
+    tableroJ1[i] = new char[9]; // Para cada fila, crea un arreglo unidimensional
+
+    for (int j = 0; j < 9; j++) {
+      tableroJ1[i][j] = '.';
     }
-  }
+}
 }
 Barco::~Barco (){
-  delete[] tableroJ1;
+  for (int i = 0; i < 9; i++) {
+  delete[] tableroJ1[i]; // Libera la memoria de cada fila
+}
+
+delete[] tableroJ1; // Libera el arreglo de punteros
 }
 
 

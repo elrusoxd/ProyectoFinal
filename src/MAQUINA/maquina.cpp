@@ -4,17 +4,25 @@
 #include <iostream>
 using namespace std;
 
-Maquina::Maquina():Barco() {
-  tableroM = new char[9][9];
-   for (int i=0; i<9; i++){
-    for (int j=0; j<9; j++){
-      tableroM [i][j]= '.';
+Maquina::Maquina(){
+   tableroM = new char*[9]; // Crea un arreglo de punteros
+
+  for (int i = 0; i < 9; i++) {
+    tableroM[i] = new char[9]; // Para cada fila, crea un arreglo unidimensional
+
+    for (int j = 0; j < 9; j++) {
+      tableroM[i][j] = '.';
     }
-  }
+}
 }
 Maquina::~Maquina(){
-  delete [] tableroM;
+    for (int i = 0; i < 9; i++) {
+  delete[] tableroM[i]; // Libera la memoria de cada fila
 }
+
+delete[] tableroM; // Libera el arreglo de punteros
+}
+
 
 
 void Maquina::ingresarPosicionM (){  

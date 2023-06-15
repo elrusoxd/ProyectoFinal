@@ -2,19 +2,26 @@
 #include <iostream>
 using namespace std;
 
-Barco2::Barco2 ():Barco() {
+Barco2::Barco2 (){
+   tableroJ2 = new char*[9]; // Crea un arreglo de punteros
 
-   tableroJ2 = new char[9][9];
-  for (int i=0; i<9; i++){
-    for (int j=0; j<9; j++){
-      tableroJ2 [i][j]= '.';
+  for (int i = 0; i < 9; i++) {
+    tableroJ2[i] = new char[9]; // Para cada fila, crea un arreglo unidimensional
+
+    for (int j = 0; j < 9; j++) {
+      tableroJ2[i][j] = '.';
     }
   }
+ 
 }
 Barco2::~Barco2(){
-  delete [] tableroJ2;
+  for (int i = 0; i < 9; i++) {
+  delete[] tableroJ2[i]; // Libera la memoria de cada fila
 }
-int Barco2::getTableroJ2(){return (*tableroJ2)[9];}
+
+delete[] tableroJ2; // Libera el arreglo de punteros
+}
+
 
 void Barco2::ingresarPosicion2 (){  
   
